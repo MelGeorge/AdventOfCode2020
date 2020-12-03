@@ -11,7 +11,7 @@
 #include <fstream>
 #include <vector>
 
-std::vector<std::vector<char> > forest;
+std::vector<std::string> forest;
 
 void initialize_forest();
 size_t get_num_trees(size_t right, size_t down);
@@ -34,18 +34,11 @@ int main(int argc, const char * argv[]) {
 void initialize_forest()
 {
     std::ifstream infile("input.txt");
-    
     std::string line;
     
     while(infile >> line)
     {
-        forest.push_back(std::vector<char>());
-        size_t current_row = forest.size() - 1;
-        
-        for(size_t i = 0; i < line.size(); ++i)
-        {
-            forest[current_row].push_back(line[i]);
-        }
+        forest.push_back(line);
     }
 }
 
@@ -62,8 +55,7 @@ size_t get_num_trees(size_t right, size_t down)
         trees += forest[row][col] == '#';
         
         // Move 3 to the right and down 1.
-        col += right;
-        col = col % forest[row].size();
+        col = (col + right) % forest[row].size();
         row += down;
     }
     
