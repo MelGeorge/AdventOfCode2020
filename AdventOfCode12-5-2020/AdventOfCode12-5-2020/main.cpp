@@ -17,9 +17,9 @@ int get_encoded_val(char * begin, char * end, char front_of_range, int max_val);
 int main(int argc, const char * argv[]) {
     std::ifstream infile("input.txt");
     std::string line;
-    int highest_seat = 0;
     
     std::vector<bool> seats(1000, false);
+    int highest_seat = 0;
     
     while(infile >> line)
     {
