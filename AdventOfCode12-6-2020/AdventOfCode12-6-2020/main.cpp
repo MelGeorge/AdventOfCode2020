@@ -1,8 +1,8 @@
 //
 //  main.cpp
-//  AdventOfCode12-4-2020
+//  AdventOfCode12-6-2020
 //
-//  Created by Melissa George on 12/4/20.
+//  Created by Melissa George on 12/6/20.
 //  Copyright © 2020 Melissa George. All rights reserved.
 //
 
