@@ -12,7 +12,6 @@
 #include <map>
 #include <set>
 #include <regex>
-#include <stack>
 
 using namespace std;
 
