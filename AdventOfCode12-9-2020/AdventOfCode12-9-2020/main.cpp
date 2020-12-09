@@ -6,13 +6,10 @@
 //  Copyright © 2020 Melissa George. All rights reserved.
 //
 
-#include <unordered_map>
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include <map>
 #include <set>
-#include <regex>
 
 using namespace std;
 
@@ -25,9 +22,7 @@ int main(int argc, const char * argv[])
 {
     unsigned long long invalid = find_invalid_number(25);
     cout << "Part 1 invalid # is: " << invalid << endl;
-    
-    unsigned long long weakness = find_encryption_weakness(invalid);
-    cout << "Part 2 encryption weakness: " << weakness << endl;
+    cout << "Part 2 encryption weakness: " << find_encryption_weakness(invalid) << endl;
 }
 
 unsigned long long find_invalid_number(int preamble_length)
@@ -36,12 +31,11 @@ unsigned long long find_invalid_number(int preamble_length)
     int nums = 0;
     unsigned long long temp;
     
-    while(nums < preamble_length)
+    while(nums++ < preamble_length)
     {
         infile >> temp;
         window.insert(temp);
         values.push_back(temp);
-        ++nums;
     }
     
     int window_start = 0;
@@ -67,10 +61,7 @@ unsigned long long find_invalid_number(int preamble_length)
         }
         
         if (!valid)
-        {
-            infile.close();
             return check_number;
-        }
         
         window.erase(values[window_start++]);
         window.insert(values[window_end++]);
