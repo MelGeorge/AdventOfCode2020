@@ -1,25 +1,19 @@
 //
 //  main.cpp
-//  AdventOfCode12-14-2020
+//  AdventOfCode12-15-2020
 //
-//  Created by Melissa George on 12/14/20.
+//  Created by Melissa George on 12/17/20.
 //  Copyright © 2020 Melissa George. All rights reserved.
 //
 
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include <set>
-#include <bitset>
-#include <math.h>
-#include <map>
 #include <unordered_map>
 
 using namespace std;
 
 vector<unsigned long> sequence;
-void part1();
-void part2();
 void readinput();
 unsigned long get_nth_num(unsigned long n);
 vector<string> split(string s, string delimiter);
